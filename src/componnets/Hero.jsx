@@ -2,7 +2,7 @@ import profilepic from "../assets/talhap.webp"
 import resume from '../assets/TalhaCV.pdf';
 function Hero() {
 
-    let HERO_CONTENT = 'I am Muhammad Talha Saeed, a skilled software engineer with a Bachelor of Science in Computer Science from the University of Agriculture Faisalabad. With over four years of experience, I specialize in developing web and mobile applications using technologies like Angular, React JS, along with expertise in databases like MySQL and MongoDB. Proficient in front-end frameworks, back-end APIs, I deliver user-focused, efficient, and scalable solutions. Fluent in English and Urdu, I thrive in collaborative environments and am eager to contribute to innovative projects.'
+    let HERO_CONTENT = 'I am  skilled software engineer with a Bachelor of Science in Computer Science from the University of Agriculture Faisalabad. With over four years of experience, I specialize in developing web  using technologies like Angular, React JS, along with expertise in databases like MySQL and MongoDB. Proficient in front-end frameworks, back-end APIs, I deliver user-focused, efficient, and scalable solutions. Fluent in English and Urdu, I thrive in collaborative environments and am eager to contribute to innovative projects.'
     return (
         <div className="pb-4 lg:mb-36">
             <div className="flex flex-wrap lg:flex-row-reverse">
