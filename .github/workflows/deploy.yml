@@ -3,14 +3,14 @@ name: Deploy Vite to GitHub Pages
 on:
   push:
     branches:
-      - master  # Trigger deployment only for the master branch
+      - master  # Deploy on changes to the master branch
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
+    - name: Checkout repository
       uses: actions/checkout@v2
 
     - name: Set up Node.js
@@ -19,9 +19,7 @@ jobs:
         node-version: '16'
 
     - name: Install dependencies
-      run: |
-        npm ci  # Ensures a clean install of dependencies
-        chmod +x node_modules/.bin/vite  # Ensures the vite command has execution permission
+      run: npm ci
 
     - name: Build Vite project
       run: npm run build
@@ -30,4 +28,5 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_branch: gh-pages
         publish_dir: ./dist
