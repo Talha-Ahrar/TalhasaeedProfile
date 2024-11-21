@@ -6,7 +6,7 @@ import Contact from "./componnets/Contact"
 import Education from "./componnets/Education"
 
 
-import Projects from "./componnets/Projects"
+// import Projects from "./componnets/Projects"
 
 
 
