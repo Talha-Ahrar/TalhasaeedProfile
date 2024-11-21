@@ -1,16 +1,16 @@
-{
+{"homepage": "https://Talha-Ahrar.github.io/TalhasaeedProfile",
   "name": "talha-saeed",
   "private": true,
   "version": "0.0.0",
   "type": "module",
 "scripts": {
-  "dev": "vite",
-  "build": "vite build",
-  "preview": "vite preview",
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d dist"
-},
-"homepage": "https://Talha-Ahrar.github.io/TalhasaeedProfile",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
+
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
