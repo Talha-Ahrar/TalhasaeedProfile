@@ -19,7 +19,9 @@ jobs:
         node-version: '16'
 
     - name: Install dependencies
-      run: npm install
+      run: |
+        npm ci  # Ensures a clean install of dependencies
+        chmod +x node_modules/.bin/vite  # Ensures the vite command has execution permission
 
     - name: Build Vite project
       run: npm run build
