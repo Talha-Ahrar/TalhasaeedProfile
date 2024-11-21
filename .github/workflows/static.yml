@@ -1,0 +1,58 @@
+# Workflow to deploy a Vite project to GitHub Pages
+name: Talha Saeed Profile
+
+on:
+  # Runs on pushes to the default branch
+  push:
+    branches:
+      - master
+
+  # Allows manual triggering
+  workflow_dispatch:
+
+# Set permissions for the GitHub Pages deployment
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4: Build the Vite project
+      - name: Build Vite project
+        run: npm run build
+
+      # Step 5: Upload the build directory as an artifact
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist' # Vite outputs the built files to the `dist` directory by default
+
+      # Step 6: Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
